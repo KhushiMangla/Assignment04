@@ -1,0 +1,131 @@
+/* hamburger icon */
+@use 'variables' as *;
+@use 'mixin' as *;
+
+
+
+
+// @mixin flexColumn{
+//     display: flex;
+//     flex-direction: column;
+  
+//   }
+  
+//   @mixin desktop($min-width){
+//     @media (min-width: $min-width){
+//       @content;
+//     }
+  
+//   }
+
+
+
+
+
+
+#nav-toggle {
+    z-index: 200;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+  
+    span {
+      position: absolute;
+      top: 19px;
+      left: 17px;
+      display: inline-block;
+      width: 30px;
+      height: 3px;
+      border-radius: 2px;
+      background-color: #ffffff;
+      vertical-align: top;
+    }
+  
+    span:nth-child(2) {
+      margin-top: 10px;
+    }
+  
+    span:last-child {
+      margin-top: 20px;
+    }
+  
+    &.open span {
+      top: 29px;
+      left: 14px;
+      width: 35px;
+      margin: 0;
+    }
+  
+    &.open span:first-child {
+      transform: rotate(45deg);
+    }
+  
+    &.open span:nth-child(2) {
+      display: none;
+    }
+  
+    &.open span:last-child {
+      transform: rotate(-45deg);
+    }
+  }
+    /* end of hanburger icon */
+  
+  
+    /* nav menu for desktop */
+    @include desktop( 50rem) {
+  
+      .nav-mobile {
+        display: none;
+      }
+  
+      .nav-list {
+        display: flex;
+        top: 8px;
+        background-color: $color;
+        width: 100%;
+        margin: 1rem 2rem 0;
+        padding: 3px;
+        right: 5px;
+        gap: 30px;
+        justify-content: right;
+        z-index: 10;
+  
+      
+  
+       ul li {
+        text-decoration: none;
+        text-transform: capitalize;
+      }
+  
+      a {
+        color: white;
+        font-size: 1.25rem;
+      }
+  
+      header nav ul li:hover {
+        background: rgb(121, 121, 121); 
+        display: block;
+        transition: color .3s;
+      }
+  
+      .nav-dropdown {
+        display: none;
+        position: absolute;
+        background-color: rgb(223, 223, 223);
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+        padding: 1rem;
+        text-align: left;
+  
+        a 
+        {
+          color: black;
+          font-size: 1rem;
+        }
+      }
+  
+    } 
+    }

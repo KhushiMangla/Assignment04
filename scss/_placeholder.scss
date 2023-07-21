@@ -1,0 +1,31 @@
+@use 'variables' as *;
+
+%light-theme{
+    background: lighten($dark-color, 100%);
+    color: darken($text-color,100%);
+  }
+  %dark-theme{
+    background: darken($dark-color, 100%);
+    color: lighten($text-color,100%);
+    
+  }
+  
+  .light{
+    @extend %light-theme;
+  }
+  
+  .dark{
+    @extend %dark-theme;
+    
+    h3{
+      color:$dark-color;
+    }
+    .posts{
+      background-color: white;
+    }
+    .footer-wrap{
+      p{
+        color:$dark-color;
+      }
+    }
+  }
